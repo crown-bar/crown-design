@@ -95,3 +95,9 @@ src/routes/                                      # dev-only demo pages
 ```
 
 See `AGENTS.md` for component conventions, prop API patterns, and known gotchas when adding new components.
+
+## Publishing
+`npm run release`
+
+Versioning flags: ` -- patch, -- minor, -- major` \
+Or an explicit version: `--version 1.1.0`

@@ -1,0 +1,8 @@
+/* @crown/design — token entry point
+   Import this file to get all design tokens.
+   Separately import ./base.css for resets and type utilities. */
+
+@import "./fonts.css";
+@import "./colors.css";
+@import "./typography.css";
+@import "./spacing.css";

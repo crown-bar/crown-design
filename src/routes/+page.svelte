@@ -16,6 +16,8 @@
 	import Spinner from '$lib/components/Spinner/Spinner.svelte';
 	import Progress from '$lib/components/Progress/Progress.svelte';
 	import * as Dialog from '$lib/components/Dialog/index.js';
+	import * as Sheet from '$lib/components/Sheet/index.js';
+	import * as Popover from '$lib/components/Popover/index.js';
 	import * as Tooltip from '$lib/components/Tooltip/index.js';
 	import * as Menu from '$lib/components/Menu/index.js';
 	import * as Tabs from '$lib/components/Tabs/index.js';
@@ -32,6 +34,7 @@
 	import DateTimeRangePicker, {
 		type DateTimeRangeValue
 	} from '$lib/components/DateTimeRangePicker/DateTimeRangePicker.svelte';
+	import Skeleton from '$lib/components/Skeleton/Skeleton.svelte';
 	import {
 		CalendarDate,
 		CalendarDateTime,
@@ -50,6 +53,7 @@
 	let sliderValue = $state(40);
 	let darkMode = $state(true);
 	let dialogOpen = $state(false);
+	let sheetOpen = $state(false);
 	let cardBgOutline = $state(false);
 	let cardBgFlat = $state(false);
 	let cardBgElevated = $state(false);
@@ -636,7 +640,7 @@
 	</section>
 
 	<section>
-		<p class="crown-eyebrow">Spinner · Tooltip · Dialog</p>
+		<p class="crown-eyebrow">Spinner · Tooltip · Popover · Dialog · Sheet</p>
 		<div class="grid">
 			<div class="cell">
 				<span class="label">default</span>
@@ -665,6 +669,29 @@
 				</Tooltip.Root>
 			</div>
 			<div class="cell">
+				<span class="label">popover</span>
+				<Popover.Root>
+					<Popover.Trigger>
+						{#snippet child({ props })}
+							<Button {...props} variant="secondary" size="sm">Filters</Button>
+						{/snippet}
+					</Popover.Trigger>
+					<Popover.Content>
+						<p class="crown-eyebrow">Filter by</p>
+						<div class="stack" style="margin-top: var(--space-2)">
+							<div style="display: flex; align-items: center; gap: var(--space-2)">
+								<Checkbox id="demo-popover-active" />
+								<Label for="demo-popover-active" size="sm">Active staff only</Label>
+							</div>
+							<div style="display: flex; align-items: center; gap: var(--space-2)">
+								<Checkbox id="demo-popover-open-shifts" />
+								<Label for="demo-popover-open-shifts" size="sm">Has open shifts</Label>
+							</div>
+						</div>
+					</Popover.Content>
+				</Popover.Root>
+			</div>
+			<div class="cell">
 				<span class="label">dialog</span>
 				<Button variant="secondary" onclick={() => (dialogOpen = true)}>Open dialog</Button>
 				<Dialog.Root bind:open={dialogOpen}>
@@ -676,6 +703,63 @@
 						{/snippet}
 					</Dialog.Content>
 				</Dialog.Root>
+			</div>
+			<div class="cell">
+				<span class="label">sheet</span>
+				<Button variant="secondary" onclick={() => (sheetOpen = true)}>Open sheet</Button>
+				<Sheet.Root bind:open={sheetOpen}>
+					<Sheet.Content side="right" eyebrow="Roster" title="Edit shift">
+						Adjust the start/end time or reassign this shift to another staff member.
+						{#snippet footer()}
+							<Button variant="ghost" onclick={() => (sheetOpen = false)}>Cancel</Button>
+							<Button variant="primary" onclick={() => (sheetOpen = false)}>Save</Button>
+						{/snippet}
+					</Sheet.Content>
+				</Sheet.Root>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<p class="crown-eyebrow">Skeleton</p>
+		<div class="grid">
+			<div class="cell">
+				<span class="label">text</span>
+				<Skeleton variant="text" width={140} />
+			</div>
+			<div class="cell">
+				<span class="label">circular</span>
+				<Skeleton variant="circular" />
+			</div>
+			<div class="cell">
+				<span class="label">circular · lg</span>
+				<Skeleton variant="circular" width={56} />
+			</div>
+			<div class="cell">
+				<span class="label">rectangular</span>
+				<Skeleton variant="rectangular" width={160} height={90} />
+			</div>
+			<div class="cell">
+				<span class="label">pulse</span>
+				<Skeleton variant="text" width={120} animation="pulse" />
+			</div>
+			<div class="cell">
+				<span class="label">wave</span>
+				<Skeleton variant="text" width={120} animation="wave" />
+			</div>
+			<div class="cell">
+				<span class="label">none</span>
+				<Skeleton variant="text" width={120} animation="none" />
+			</div>
+			<div class="cell">
+				<span class="label">list item</span>
+				<div style="display: flex; align-items: center; gap: var(--space-3); width: 100%">
+					<Skeleton variant="circular" />
+					<div style="display: flex; flex-direction: column; gap: var(--space-2); flex: 1">
+						<Skeleton variant="text" width="70%" />
+						<Skeleton variant="text" width="40%" />
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

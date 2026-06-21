@@ -1,0 +1,86 @@
+/* Tiempos Fine — Klim Type Foundry. Used only for large display (>22px). */
+
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Fine";
+  src: url("../assets/fonts/TiemposFine-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

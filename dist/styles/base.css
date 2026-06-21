@@ -1,0 +1,61 @@
+/* The Crown Bar — Base layer (opt-in)
+   Minimal resets + default typographic ground.
+   Import separately: import '@crown/design/styles/base' */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--size-md);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: var(--border-thick) solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Typography utilities */
+.crown-display {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.crown-poster {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+}
+
+.crown-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  font-size: var(--size-2xs);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+.crown-body {
+  font-family: var(--font-sans);
+  font-size: var(--size-md);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+  margin: 0;
+}

@@ -1,0 +1,48 @@
+/* The Crown Bar — Typography Tokens
+   Tiempos Fine (serif) — display only, >22px, mostly Black (900).
+   Grotesque (--font-sans) — all UI. Brand spec = Helvetica Now;
+   falls back to system Helvetica/Arial. */
+
+:root {
+  /* Families */
+  --font-serif: "Tiempos Fine", "Times New Roman", Georgia, serif;
+  --font-sans:  "Helvetica Now", "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  "SFMono-Regular", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Weights */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    900;
+
+  /* Display scale (Tiempos Fine) */
+  --size-display-2xl: 88px;
+  --size-display-xl:  64px;
+  --size-display-lg:  48px;
+  --size-display-md:  34px;
+  --size-display-sm:  26px;
+
+  /* Text scale (grotesque) */
+  --size-2xl: 24px;
+  --size-xl:  20px;
+  --size-lg:  18px;
+  --size-md:  16px;
+  --size-sm:  14px;
+  --size-xs:  13px;
+  --size-2xs: 11px;
+
+  /* Line heights */
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* Letter spacing */
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-eyebrow: 0.14em;
+}

@@ -48,7 +48,7 @@ body {
   font-size: var(--size-2xs);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   margin: 0;
 }
 

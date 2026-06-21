@@ -97,6 +97,25 @@
 		border-color: var(--status-info-fg);
 	}
 
+	/* Soft tones in dark mode: darken the bg and switch to white text
+	   instead of the light pastel fill, which washes out on dark surfaces. */
+	:global([data-theme='dark'] .badge--success.badge--soft) {
+		color: var(--crown-white);
+		background: color-mix(in srgb, var(--status-success-fg) 35%, var(--surface-sunken));
+	}
+	:global([data-theme='dark'] .badge--warning.badge--soft) {
+		color: var(--crown-white);
+		background: color-mix(in srgb, var(--status-warning-fg) 35%, var(--surface-sunken));
+	}
+	:global([data-theme='dark'] .badge--danger.badge--soft) {
+		color: var(--crown-white);
+		background: color-mix(in srgb, var(--status-danger-fg) 35%, var(--surface-sunken));
+	}
+	:global([data-theme='dark'] .badge--info.badge--soft) {
+		color: var(--crown-white);
+		background: color-mix(in srgb, var(--status-info-fg) 35%, var(--surface-sunken));
+	}
+
 	/* Tone/variant: solid (always brand black) */
 	.badge--is-solid,
 	.badge--solid {

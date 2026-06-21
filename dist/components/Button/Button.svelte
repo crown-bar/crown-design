@@ -66,9 +66,25 @@
 		cursor: pointer;
 		user-select: none;
 
+		/* Exit: slow & smooth */
 		transition:
-			background var(--duration-fast) var(--ease-standard),
-			border-color var(--duration-fast) var(--ease-standard);
+			background-position var(--duration-slow) var(--ease-out),
+			border-color var(--duration-fast) var(--ease-standard),
+			box-shadow var(--duration-normal) var(--ease-out),
+			transform var(--duration-normal) var(--ease-out);
+
+		&:hover:not(:disabled) {
+			/* Enter: fast & snappy */
+			transition:
+				background-position var(--duration-normal) var(--ease-emphasis),
+				border-color var(--duration-fast) var(--ease-standard),
+				box-shadow var(--duration-fast) var(--ease-emphasis);
+		}
+
+		&:active:not(:disabled) {
+			transform: scale(0.97);
+			transition-duration: 80ms;
+		}
 
 		&:focus-visible {
 			outline: var(--border-thick) solid var(--focus-ring);
@@ -104,30 +120,48 @@
 		padding: 0 var(--space-6);
 	}
 
-	/* Variants */
+	/* Variants — gradient slide technique:
+	   left half = hover color, right half = rest color.
+	   background-size: 200% so only one half is visible at a time.
+	   Animating background-position slides the hover color in from the left. */
+
 	.btn--primary {
-		background: var(--btn-accent, var(--action-primary));
+		background-image: linear-gradient(
+			to right,
+			color-mix(in srgb, var(--btn-accent, var(--action-primary)) 82%, var(--crown-black)) 33%,
+	var(--btn-accent, var(--action-primary)) 67%
+		);
+		background-size: 300%;
+		background-position: right;
 		color: var(--text-on-accent);
 		border: var(--border-hairline) solid var(--btn-accent, var(--action-primary));
 
 		&:hover:not(:disabled) {
-			background: var(--action-primary-hover);
-			border-color: var(--action-primary-hover);
+			background-position: left;
+			border-color: color-mix(in srgb, var(--btn-accent, var(--action-primary)) 82%, var(--crown-black));
+			box-shadow: var(--shadow-sm);
 		}
 
 		&:active:not(:disabled) {
 			background: var(--action-primary-active);
 			border-color: var(--action-primary-active);
+			box-shadow: none;
 		}
 	}
 
 	.btn--secondary {
-		background: var(--surface-card);
+		background-image: linear-gradient(
+			to right,
+			var(--surface-active) 33%,
+	var(--surface-card) 67%
+		);
+		background-size: 300%;
+		background-position: right;
 		color: var(--text-primary);
 		border: var(--border-hairline) solid var(--border-default);
 
 		&:hover:not(:disabled) {
-			background: var(--surface-hover);
+			background-position: left;
 			border-color: var(--border-strong);
 		}
 
@@ -142,22 +176,33 @@
 		border: var(--border-hairline) solid transparent;
 
 		&:hover:not(:disabled) {
-			background: var(--surface-hover);
+			border-color: var(--border-default);
 		}
 
 		&:active:not(:disabled) {
 			background: var(--surface-active);
+			border-color: var(--border-default);
 		}
 	}
 
 	.btn--danger {
-		background: var(--btn-accent, var(--status-danger-fg));
+		background-image: linear-gradient(
+			to right,
+			color-mix(in srgb, var(--btn-accent, var(--status-danger-fg)) 82%, var(--crown-black)) 33%,
+	var(--btn-accent, var(--status-danger-fg)) 67%
+		);
+		background-size: 300%;
+		background-position: right;
 		color: #fff;
 		border: var(--border-hairline) solid var(--btn-accent, var(--status-danger-fg));
 
 		&:hover:not(:disabled) {
-			background: color-mix(in srgb, var(--btn-accent, var(--status-danger-fg)) 82%, #000);
-			border-color: color-mix(in srgb, var(--btn-accent, var(--status-danger-fg)) 82%, #000);
+			background-position: left;
+			border-color: color-mix(in srgb, var(--btn-accent, var(--status-danger-fg)) 82%, var(--crown-black));
+		}
+
+		&:active:not(:disabled) {
+			background: color-mix(in srgb, var(--btn-accent, var(--status-danger-fg)) 65%, var(--crown-black));
 		}
 	}
 

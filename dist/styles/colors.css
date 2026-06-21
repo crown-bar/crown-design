@@ -22,13 +22,13 @@
   --neutral-950: #0a0a09;
 
   /* Semantic accents (muted, premium) */
-  --green-600:  #2e7d5b;
+  --green-600:  #24895e;
   --green-100:  #e3f0e9;
-  --gold-600:   #a8772a;
+  --gold-600:   #b57a1c;
   --gold-100:   #f4ebda;
-  --red-600:    #b23a3a;
+  --red-600:    #c22a2a;
   --red-100:    #f6e3e2;
-  --blue-600:   #3a5f8a;
+  --blue-600:   #2d5e97;
   --blue-100:   #e3eaf2;
 
   /* Surfaces */
@@ -42,7 +42,6 @@
   /* Text */
   --text-primary:   var(--neutral-900);
   --text-secondary: var(--neutral-600);
-  --text-tertiary:  var(--neutral-500);
   --text-disabled:  var(--neutral-400);
   --text-inverse:   var(--neutral-0);
   --text-on-accent: var(--neutral-0);
@@ -82,7 +81,6 @@
 
   --text-primary:   var(--neutral-50);
   --text-secondary: var(--neutral-400);
-  --text-tertiary:  var(--neutral-500);
   --text-disabled:  var(--neutral-600);
   --text-inverse:   var(--neutral-900);
   --text-on-accent: var(--neutral-900);
@@ -97,4 +95,10 @@
   --action-primary-active: var(--neutral-300);
 
   --focus-ring: var(--neutral-100);
+
+  /* Semantic accents — lifted for legibility/vibrancy on dark surfaces */
+  --green-600: #27ce87;
+  --gold-600:  #efa939;
+  --red-600:   #ff5c5c;
+  --blue-600:  #4089dd;
 }

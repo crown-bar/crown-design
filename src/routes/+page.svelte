@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button/Button.svelte';
 	import Badge from '$lib/components/Badge/Badge.svelte';
+	import Tag from '$lib/components/Tag/Tag.svelte';
 	import Avatar from '$lib/components/Avatar/Avatar.svelte';
 	import Separator from '$lib/components/Separator/Separator.svelte';
 	import Label from '$lib/components/Label/Label.svelte';
@@ -9,6 +10,7 @@
 	import Checkbox from '$lib/components/Checkbox/Checkbox.svelte';
 	import Switch from '$lib/components/Switch/Switch.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
+	import TagsInput from '$lib/components/TagsInput/TagsInput.svelte';
 	import * as RadioGroup from '$lib/components/RadioGroup/index.js';
 	import * as Select from '$lib/components/Select/index.js';
 	import Alert from '$lib/components/Alert/Alert.svelte';
@@ -51,6 +53,20 @@
 	let radioValueHorizontal = $state('a');
 	let selectValue = $state('');
 	let sliderValue = $state(40);
+	let tagsFreeform = $state<string[]>(['cocktails']);
+	let tagsWithOptions = $state<string[]>(['gin']);
+	let tagsCapped = $state<string[]>(['vip', 'window']);
+	const spiritOptions = [
+		{ value: 'gin', label: 'Gin' },
+		{ value: 'rum', label: 'Rum' },
+		{ value: 'whisky', label: 'Whisky' },
+		{ value: 'mezcal', label: 'Mezcal' }
+	];
+	const tableOptions = [
+		{ value: 'window', label: 'Window' },
+		{ value: 'bar', label: 'Bar seating' },
+		{ value: 'vip', label: 'VIP booth' }
+	];
 	let darkMode = $state(true);
 	let dialogOpen = $state(false);
 	let sheetOpen = $state(false);
@@ -189,6 +205,32 @@
 			<div class="cell">
 				<span class="label">outline danger</span>
 				<Badge tone="danger" variant="outline" dot>Cancelled</Badge>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<p class="crown-eyebrow">Tag</p>
+		<div class="grid">
+			<div class="cell">
+				<span class="label">neutral</span>
+				<Tag tone="neutral">Cocktails</Tag>
+			</div>
+			<div class="cell">
+				<span class="label">success</span>
+				<Tag tone="success" dot>Confirmed</Tag>
+			</div>
+			<div class="cell">
+				<span class="label">outline</span>
+				<Tag tone="info" variant="outline">Info</Tag>
+			</div>
+			<div class="cell">
+				<span class="label">solid</span>
+				<Tag tone="solid">VIP</Tag>
+			</div>
+			<div class="cell">
+				<span class="label">removable</span>
+				<Tag tone="neutral" onremove={() => {}}>Gin</Tag>
 			</div>
 		</div>
 	</section>
@@ -449,6 +491,38 @@
 			<div class="cell cell--wide">
 				<span class="label">disabled</span>
 				<Slider value={30} disabled />
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<p class="crown-eyebrow">Tags Input</p>
+		<div class="grid">
+			<div class="cell cell--wide">
+				<span class="label">freeform — {tagsFreeform.join(', ') || 'none'}</span>
+				<TagsInput bind:value={tagsFreeform} placeholder="Add a tag…" />
+			</div>
+			<div class="cell cell--wide">
+				<span class="label">predefined + create — {tagsWithOptions.join(', ') || 'none'}</span>
+				<TagsInput bind:value={tagsWithOptions} options={spiritOptions} placeholder="Add a spirit…" />
+			</div>
+			<div class="cell cell--wide">
+				<span class="label">max 2, no custom tags — {tagsCapped.join(', ') || 'none'}</span>
+				<TagsInput
+					bind:value={tagsCapped}
+					options={tableOptions}
+					allowCustomTags={false}
+					max={2}
+					placeholder="Pick up to 2…"
+				/>
+			</div>
+			<div class="cell cell--wide">
+				<span class="label">invalid</span>
+				<TagsInput value={['bad-tag']} invalid placeholder="Add a tag…" />
+			</div>
+			<div class="cell cell--wide">
+				<span class="label">disabled</span>
+				<TagsInput value={['locked']} disabled />
 			</div>
 		</div>
 	</section>

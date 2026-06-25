@@ -1,5 +1,6 @@
 export { Button } from './components/Button/index.js';
 export { Badge } from './components/Badge/index.js';
+export { Tag } from './components/Tag/index.js';
 export { Avatar } from './components/Avatar/index.js';
 export { Separator } from './components/Separator/index.js';
 export { Label } from './components/Label/index.js';
@@ -8,6 +9,7 @@ export { Textarea } from './components/Textarea/index.js';
 export { Checkbox } from './components/Checkbox/index.js';
 export { Switch } from './components/Switch/index.js';
 export { Slider } from './components/Slider/index.js';
+export { TagsInput } from './components/TagsInput/index.js';
 export * as RadioGroup from './components/RadioGroup/index.js';
 export * as Select from './components/Select/index.js';
 export { Alert } from './components/Alert/index.js';

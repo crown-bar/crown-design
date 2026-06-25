@@ -3,6 +3,7 @@
 ## Primitives
 - [X] Button
 - [X] Badge
+- [X] Tag
 - [X] Avatar
 - [X] Separator
 
@@ -15,6 +16,7 @@
 - [X] Switch
 - [X] Select
 - [X] Slider
+- [X] Tags Input
 
 ## Feedback
 - [X] Alert

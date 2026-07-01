@@ -23,7 +23,7 @@
 - [X] Toast
 - [X] Spinner
 - [X] Progress
-- [ ] Skeleton
+- [X] Skeleton
 
 ## Overlay
 - [X] Tooltip
@@ -49,3 +49,9 @@
 - [X] TimePicker
 - [X] DateTimePicker
 - [X] DateTimeRangePicker
+
+## Data
+- [ ] Table
+- [ ] Line chart
+- [ ] Bar chart
+- [ ] Pie chart

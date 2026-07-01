@@ -44,7 +44,7 @@
 			transition: scale var(--duration-fast) var(--ease-emphasis);
 		}
 
-		&:hover:not(:disabled) {
+		&:hover:not(:global(:disabled)) {
 			border-color: var(--border-strong);
 		}
 

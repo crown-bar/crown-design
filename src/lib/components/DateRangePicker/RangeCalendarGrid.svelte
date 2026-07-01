@@ -90,7 +90,7 @@
 
 		transition: background var(--duration-fast) var(--ease-standard);
 
-		&:hover:not([data-disabled]):not([data-selected]) {
+		&:hover:not(:global([data-disabled])):not(:global([data-selected])) {
 			background: var(--surface-active);
 		}
 
@@ -99,7 +99,7 @@
 			box-shadow: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--border-strong);
 		}
 
-		&[data-today]:not([data-selected]) {
+		&[data-today]:not(:global([data-selected])) {
 			font-weight: var(--weight-semibold);
 			color: var(--action-primary);
 		}

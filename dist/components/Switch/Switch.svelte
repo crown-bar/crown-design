@@ -35,7 +35,7 @@
 
 		transition: background-color var(--duration-fast) var(--ease-standard);
 
-		&:hover:not(:disabled) {
+		&:hover:not(:global(:disabled)) {
 			background: var(--border-strong);
 		}
 

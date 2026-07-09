@@ -10,6 +10,7 @@ export { Checkbox } from './components/Checkbox/index.js';
 export { Switch } from './components/Switch/index.js';
 export { Slider } from './components/Slider/index.js';
 export { TagsInput } from './components/TagsInput/index.js';
+export { Combobox, type ComboboxOption } from './components/Combobox/index.js';
 export * as RadioGroup from './components/RadioGroup/index.js';
 export * as Select from './components/Select/index.js';
 export { Alert } from './components/Alert/index.js';

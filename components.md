@@ -15,6 +15,7 @@
 - [X] Radio Group
 - [X] Switch
 - [X] Select
+- [X] Combobox (searchable select)
 - [X] Slider
 - [X] Tags Input
 

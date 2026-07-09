@@ -11,6 +11,7 @@
 	import Switch from '$lib/components/Switch/Switch.svelte';
 	import Slider from '$lib/components/Slider/Slider.svelte';
 	import TagsInput from '$lib/components/TagsInput/TagsInput.svelte';
+	import Combobox from '$lib/components/Combobox/Combobox.svelte';
 	import * as RadioGroup from '$lib/components/RadioGroup/index.js';
 	import * as Select from '$lib/components/Select/index.js';
 	import Alert from '$lib/components/Alert/Alert.svelte';
@@ -56,6 +57,19 @@
 	let tagsFreeform = $state<string[]>(['cocktails']);
 	let tagsWithOptions = $state<string[]>(['gin']);
 	let tagsCapped = $state<string[]>(['vip', 'window']);
+	let comboSingle = $state('');
+	let comboMulti = $state<string[]>(['gin']);
+	const cityOptions = [
+		{ value: 'zurich', label: 'Zürich' },
+		{ value: 'geneva', label: 'Geneva' },
+		{ value: 'basel', label: 'Basel' },
+		{ value: 'bern', label: 'Bern' },
+		{ value: 'lausanne', label: 'Lausanne' },
+		{ value: 'lucerne', label: 'Lucerne' },
+		{ value: 'stgallen', label: 'St. Gallen' },
+		{ value: 'winterthur', label: 'Winterthur' },
+		{ value: 'rapperswil', label: 'Rapperswil' }
+	];
 	const spiritOptions = [
 		{ value: 'gin', label: 'Gin' },
 		{ value: 'rum', label: 'Rum' },
@@ -477,6 +491,34 @@
 						<Select.Item value="a">A</Select.Item>
 					</Select.Content>
 				</Select.Root>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<p class="crown-eyebrow">Combobox (searchable)</p>
+		<div class="grid">
+			<div class="cell">
+				<span class="label">single — {comboSingle || 'none'}</span>
+				<Combobox
+					type="single"
+					bind:value={comboSingle}
+					options={cityOptions}
+					placeholder="Search a city…"
+				/>
+			</div>
+			<div class="cell">
+				<span class="label">multiple — {comboMulti.length} selected</span>
+				<Combobox
+					type="multiple"
+					bind:value={comboMulti}
+					options={spiritOptions}
+					placeholder="Search spirits…"
+				/>
+			</div>
+			<div class="cell">
+				<span class="label">disabled</span>
+				<Combobox options={cityOptions} placeholder="Unavailable" disabled />
 			</div>
 		</div>
 	</section>

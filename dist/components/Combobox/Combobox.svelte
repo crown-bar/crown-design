@@ -580,7 +580,9 @@
 		border-radius: var(--radius-md);
 		box-shadow: var(--shadow-md);
 		padding: var(--space-1);
-		z-index: var(--z-overlay);
+		/* Above --z-modal so the dropdown stays visible when the Combobox is used
+		   inside a Dialog (its portalled content is a sibling of the modal on <body>). */
+		z-index: calc(var(--z-modal) + 10);
 
 		width: var(--bits-floating-anchor-width);
 		min-width: var(--bits-floating-anchor-width);

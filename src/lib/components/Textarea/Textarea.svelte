@@ -81,4 +81,11 @@
 		border-color: var(--status-danger-fg);
 		box-shadow: 0 0 0 3px var(--status-danger-bg);
 	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		.textarea {
+			font-size: var(--size-md);
+		}
+	}
 </style>

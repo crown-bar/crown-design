@@ -130,4 +130,11 @@
 	.input--disabled .input-field::placeholder {
 		color: var(--text-disabled);
 	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		.input-field {
+			font-size: var(--size-md);
+		}
+	}
 </style>

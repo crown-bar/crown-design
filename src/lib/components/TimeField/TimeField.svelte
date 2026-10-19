@@ -124,4 +124,11 @@
 	:global([data-disabled]) .time-field-literal {
 		color: var(--text-disabled);
 	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		:global(.time-field-segment) {
+			font-size: var(--size-md);
+		}
+	}
 </style>

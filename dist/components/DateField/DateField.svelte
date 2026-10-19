@@ -123,4 +123,11 @@
 	:global([data-disabled]) .date-field-literal {
 		color: var(--text-disabled);
 	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		:global(.date-field-segment) {
+			font-size: var(--size-md);
+		}
+	}
 </style>

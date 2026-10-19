@@ -256,6 +256,11 @@
 		border-radius: var(--radius-sm);
 		padding: 0 var(--space-2) 0 var(--space-3);
 
+		/* Only rendered on touch devices — keep ≥16px so iOS doesn't zoom on focus */
+		font-family: var(--font-sans);
+		font-size: var(--size-md);
+		color: var(--text-primary);
+
 		transition:
 			border-color var(--duration-fast) var(--ease-standard),
 			box-shadow var(--duration-fast) var(--ease-standard);
@@ -413,6 +418,13 @@
 			font-weight: var(--weight-medium);
 			background: var(--action-primary);
 			color: var(--text-on-accent);
+		}
+	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		:global(.time-picker-text) {
+			font-size: var(--size-md);
 		}
 	}
 </style>

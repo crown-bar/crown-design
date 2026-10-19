@@ -459,4 +459,11 @@
 		color: var(--text-secondary);
 		font-style: italic;
 	}
+
+	/* iOS Safari zooms the page when focusing text entry under 16px */
+	@media (pointer: coarse) {
+		:global(.tags-input-text) {
+			font-size: var(--size-md);
+		}
+	}
 </style>

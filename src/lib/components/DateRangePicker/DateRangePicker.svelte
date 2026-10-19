@@ -167,7 +167,7 @@
 		border-radius: var(--radius-md);
 		box-shadow: var(--shadow-md);
 		padding: var(--space-4);
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		opacity: 1;
 		scale: 1;

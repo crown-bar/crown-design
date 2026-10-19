@@ -29,6 +29,8 @@ Brand: strict black & white with warm neutrals, sharp radii (4px default), hairl
 - `spacing.css` — spacing, radii, shadows, motion, z-index
 - `base.css` — opt-in resets + display/eyebrow utility classes
 
+Z-index layer order: `--z-base` < `--z-sticky` < `--z-overlay` < `--z-modal` (Dialog, Sheet) < `--z-popover` (every portalled floating panel — Select, Combobox, Menu, Popover, Tooltip, TagsInput, date/time picker dropdowns) < `--z-toast`. Any new floating panel must use `--z-popover`, never `--z-overlay` or a `calc()` off `--z-modal` — panels are portalled to `<body>` and must sit above modals to work inside a Dialog/Sheet. Bits UI copies the panel's computed z-index onto its floating wrapper, so setting it on the panel is enough.
+
 Always use existing Crown token names (`--action-primary`, `--surface-card`, `--text-primary`, `--border-default`, `--radius-sm`, `--duration-fast`, etc.) — never invent new ones.
 
 ## Component conventions

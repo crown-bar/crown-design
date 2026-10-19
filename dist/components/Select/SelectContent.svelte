@@ -29,7 +29,7 @@
 		overflow-y: auto;
 		width: var(--bits-floating-anchor-width);
 		min-width: var(--bits-floating-anchor-width);
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		opacity: 1;
 		scale: 1;

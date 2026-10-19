@@ -67,6 +67,15 @@ Token source lives in `src/lib/styles/`:
 
 Components only ever reference existing tokens (`--action-primary`, `--surface-card`, `--text-primary`, `--border-default`, `--radius-sm`, `--duration-fast`, ...) — no component introduces its own one-off values.
 
+### Layer order (z-index)
+
+`--z-base` (0) < `--z-sticky` (100) < `--z-overlay` (500) < `--z-modal` (1000) < `--z-popover` (1100) < `--z-toast` (1500)
+
+- `--z-modal` — Dialog and Sheet (overlay + content).
+- `--z-popover` — every floating panel: Select, Combobox, Menu, Popover, Tooltip, TagsInput and the DatePicker / DateRangePicker / TimePicker dropdowns (and so DateTimePicker / DateTimeRangePicker). Panels are portalled to `<body>`, so this layer sits above modals to keep them usable inside a Dialog or Sheet.
+- `--z-toast` — position your toast stack with this so it stays above everything, including an open panel.
+- `--z-overlay` — not used by the library; for app-level layers that should stay under modals.
+
 ## Development
 
 ```sh

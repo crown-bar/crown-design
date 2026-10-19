@@ -84,6 +84,8 @@
 	let darkMode = $state(true);
 	let dialogOpen = $state(false);
 	let sheetOpen = $state(false);
+	let layersDialogOpen = $state(false);
+	let layersSheetOpen = $state(false);
 	let cardBgOutline = $state(false);
 	let cardBgFlat = $state(false);
 	let cardBgElevated = $state(false);
@@ -829,6 +831,110 @@
 						{#snippet footer()}
 							<Button variant="ghost" onclick={() => (sheetOpen = false)}>Cancel</Button>
 							<Button variant="primary" onclick={() => (sheetOpen = false)}>Save</Button>
+						{/snippet}
+					</Sheet.Content>
+				</Sheet.Root>
+			</div>
+			<div class="cell">
+				<span class="label">panels in dialog</span>
+				<Button variant="secondary" onclick={() => (layersDialogOpen = true)}>Open dialog</Button>
+				<Dialog.Root bind:open={layersDialogOpen}>
+					<Dialog.Content eyebrow="Layers" title="Floating panels in a dialog">
+						<div class="stack">
+								<Select.Root
+									type="single"
+									items={[
+										{ value: 'bartender', label: 'Bartender' },
+										{ value: 'server', label: 'Server' },
+										{ value: 'host', label: 'Host' }
+									]}
+								>
+									<Select.Trigger>
+										<Select.Value placeholder="Choose a role" />
+									</Select.Trigger>
+									<Select.Content>
+										<Select.Item value="bartender">Bartender</Select.Item>
+										<Select.Item value="server">Server</Select.Item>
+										<Select.Item value="host">Host</Select.Item>
+									</Select.Content>
+								</Select.Root>
+							<DatePicker />
+							<TimePicker />
+							<div style="display: flex; gap: var(--space-2)">
+								<Menu.Root>
+									<Menu.Trigger>
+										{#snippet child({ props })}
+											<Button {...props} variant="secondary" size="sm">Actions</Button>
+										{/snippet}
+									</Menu.Trigger>
+									<Menu.Content>
+										<Menu.Item>Duplicate shift</Menu.Item>
+										<Menu.Separator />
+										<Menu.Item danger>Remove shift</Menu.Item>
+									</Menu.Content>
+								</Menu.Root>
+								<Popover.Root>
+									<Popover.Trigger>
+										{#snippet child({ props })}
+											<Button {...props} variant="secondary" size="sm">Popover</Button>
+										{/snippet}
+									</Popover.Trigger>
+									<Popover.Content>Shown above the dialog.</Popover.Content>
+								</Popover.Root>
+								<Tooltip.Root>
+									<Tooltip.Trigger>
+										{#snippet child({ props })}
+											<Button {...props} variant="secondary" size="sm">Tooltip</Button>
+										{/snippet}
+									</Tooltip.Trigger>
+									<Tooltip.Content>Shown above the dialog</Tooltip.Content>
+								</Tooltip.Root>
+							</div>
+						</div>
+						{#snippet footer()}
+							<Button variant="primary" onclick={() => (layersDialogOpen = false)}>Done</Button>
+						{/snippet}
+					</Dialog.Content>
+				</Dialog.Root>
+			</div>
+			<div class="cell">
+				<span class="label">panels in sheet</span>
+				<Button variant="secondary" onclick={() => (layersSheetOpen = true)}>Open sheet</Button>
+				<Sheet.Root bind:open={layersSheetOpen}>
+					<Sheet.Content side="right" eyebrow="Layers" title="Floating panels in a sheet">
+						<div class="stack">
+								<Select.Root
+									type="single"
+									items={[
+										{ value: 'bartender', label: 'Bartender' },
+										{ value: 'server', label: 'Server' },
+										{ value: 'host', label: 'Host' }
+									]}
+								>
+									<Select.Trigger>
+										<Select.Value placeholder="Choose a role" />
+									</Select.Trigger>
+									<Select.Content>
+										<Select.Item value="bartender">Bartender</Select.Item>
+										<Select.Item value="server">Server</Select.Item>
+										<Select.Item value="host">Host</Select.Item>
+									</Select.Content>
+								</Select.Root>
+								<Menu.Root>
+									<Menu.Trigger>
+										{#snippet child({ props })}
+											<Button {...props} variant="secondary" size="sm">Actions</Button>
+										{/snippet}
+									</Menu.Trigger>
+									<Menu.Content>
+										<Menu.Item>Duplicate shift</Menu.Item>
+										<Menu.Separator />
+										<Menu.Item danger>Remove shift</Menu.Item>
+									</Menu.Content>
+								</Menu.Root>
+						</div>
+						{#snippet footer()}
+							<Button variant="primary" onclick={() => (layersSheetOpen = false)}>Done</Button>
 						{/snippet}
 					</Sheet.Content>
 				</Sheet.Root>

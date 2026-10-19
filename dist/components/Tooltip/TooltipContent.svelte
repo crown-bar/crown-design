@@ -19,7 +19,7 @@
 
 <style>
 	:global(.tooltip-content) {
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		font-family: var(--font-sans);
 		font-size: var(--size-2xs);

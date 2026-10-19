@@ -41,7 +41,7 @@
 		min-width: 220px;
 		max-width: calc(100vw - 32px);
 		padding: var(--space-4);
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		background: var(--surface-card);
 		border: var(--border-hairline) solid var(--border-subtle);

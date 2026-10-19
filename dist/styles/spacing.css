@@ -38,11 +38,15 @@
   --shadow-lg:  0 12px 32px color-mix(in srgb, var(--neutral-950) 12%, transparent), 0 4px 8px color-mix(in srgb, var(--neutral-950) 5%, transparent);
   --shadow-xl:  0 24px 60px color-mix(in srgb, var(--neutral-950) 18%, transparent);
 
-  /* Z-index */
+  /* Z-index — base < sticky < overlay < modal < popover < toast.
+     Floating panels (Select, Menu, Popover, Tooltip, pickers…) are portalled to
+     <body>, so --z-popover must sit above --z-modal for them to work inside a
+     Dialog or Sheet. --z-overlay is for app-level layers that belong under modals. */
   --z-base:    0;
   --z-sticky:  100;
   --z-overlay: 500;
   --z-modal:   1000;
+  --z-popover: 1100;
   --z-toast:   1500;
 
   /* Motion */

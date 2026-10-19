@@ -409,7 +409,7 @@
 		border-radius: var(--radius-md);
 		box-shadow: var(--shadow-md);
 		padding: var(--space-1);
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		width: var(--bits-floating-anchor-width);
 		min-width: var(--bits-floating-anchor-width);

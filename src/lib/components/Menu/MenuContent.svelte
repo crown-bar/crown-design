@@ -39,7 +39,7 @@
 		flex-direction: column;
 		width: var(--menu-width, 200px);
 		padding: 6px;
-		z-index: var(--z-overlay);
+		z-index: var(--z-popover);
 
 		background: var(--surface-card);
 		border: var(--border-hairline) solid var(--border-subtle);
